@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Супер-Фест 2026 — подать заявку</title>
+<style>
+  html,body{margin:0;padding:0;}
+  body{background:#0e1530;padding:24px 14px;
+       font-family:'Montserrat','Georgia',Arial,sans-serif;}
+</style>
+</head>
+<body>
 <!-- ============================================================
      ФОРМА ЗАЯВКИ · Смежный фестивально-конкурсный проект «Супер-Фест 2026»
      (4 проекта: «Грань миров» · «Ярче всех» · «Палитра талантов» · «Код творчества»)
@@ -258,7 +271,7 @@
 <script>
 (function(){
   /* === 1) ВСТАВЬТЕ СЮДА адрес вашего Google Apps Script (заканчивается на /exec) === */
-  var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxmSUXE_lV9ZfjTqKWkqhWRuljkHr6R5klbRmx63q68usr6slgiUDozbcP2-5Fwdyg3/exec";
+  var SCRIPT_URL = "ВСТАВЬТЕ_СЮДА_АДРЕС_APPS_SCRIPT";
 
   /* мерцающие звёзды */
   var box=document.getElementById('sfStars');
@@ -304,16 +317,13 @@
     fetch(SCRIPT_URL,{method:'POST',body:data})
       .then(function(){ done(email); })
       .catch(function(){
-        /* no-cors / сетевые случаи: считаем успехом, т.к. запрос ушёл */
-        done(email);
-      });
-  });
-
-  function done(email){
-    document.getElementById('sfSentMail').textContent=email;
-    form.style.display='none';
-    success.classList.add('show');
-    try{success.scrollIntoView({behavior:'smooth',block:'center'});}catch(e){}
-  }
-})();
+       
+<script>
+/* сообщаем высоту родителю (для встраивания через iframe на Тильде) */
+function sfPostHeight(){try{parent.postMessage({sfHeight:document.documentElement.scrollHeight},'*');}catch(e){}}
+window.addEventListener('load',sfPostHeight);
+window.addEventListener('resize',sfPostHeight);
+setInterval(sfPostHeight,700);
 </script>
+</body>
+</html>
